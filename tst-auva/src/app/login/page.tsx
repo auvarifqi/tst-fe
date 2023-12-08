@@ -23,7 +23,7 @@ const router  = useRouter();
         },
       });
 
-      router.push('/');
+      router.push('https://integrated-auva.wittyfield-c9323e0d.australiaeast.azurecontainerapps.io/docs');
 
       // print error if error
         // toast.error("Invalid credentials");
@@ -51,14 +51,16 @@ const router  = useRouter();
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="username" className="sr-only">
-                Email address
+                Username
               </label>
               <input
                 id="username"
                 name="username"
+                value={username}
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                 placeholder="Your Username"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="relative">
@@ -68,11 +70,13 @@ const router  = useRouter();
               <input
                 id="password"
                 name="password"
+                value={password}
                 type={showPassword ? 'text' : 'password'}
                 autoComplete="current-password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm pr-10"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <button
                 type="button"
